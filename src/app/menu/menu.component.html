@@ -1,0 +1,11 @@
+<div class="header">
+  <ul>
+    <li><a routerLink="/home">Search flights</a></li>
+    <li><a routerLink="/home/tickets">My tickets</a></li>
+    <li><a routerLink="/home/profile">My profile</a></li>
+
+      <li *ngIf="!loggedIn" (click)="logIn()" class="log-button">LogIn</li>
+      <li *ngIf="!loggedIn" (click)="register()" class="log-button">Register</li>
+      <li *ngIf="loggedIn" (click)="logOut()" class="log-button">Logout</li>
+  </ul>
+</div>

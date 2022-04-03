@@ -1,0 +1,10 @@
+body {
+  border: none!important;
+  margin: 0!important;
+  padding: 0!important;
+  background: #020412;
+  color: #fff;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

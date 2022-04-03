@@ -1,0 +1,21 @@
+<div class="register-panel">
+  <h3>Register here</h3>
+  <div>
+    <form (ngSubmit)="register()">
+      <label>First name:</label>
+      <input type="text" [(ngModel)]="user.firstName" name="firstName" placeholder="Enter first name" class="input">
+      <label>Last Name:</label>
+      <input type="text" [(ngModel)]="user.lastName" name="lastName" placeholder="Enter last name" class="input">
+      <label>Mail:</label>
+      <input type="email" [(ngModel)]="user.mail" name="mail" placeholder="Enter mail" class="input">
+      <label>Pesel:</label>
+      <input type="text" maxlength="11" [(ngModel)]="user.idCard" name="pesel" placeholder="Enter pesel" class="input">
+      <label>Password:</label>
+      <input type="password" (input)="check()" [(ngModel)]="user.password" name="password" placeholder="Enter password" class="input">
+      <label>Repeat password:</label>
+      <input type="password" (input)="check()" [(ngModel)]="password" name="repeatPassword" placeholder="Enter password" class="input">
+      <label class="info">{{info}}</label>
+      <input type="submit" value="Register" class="button-class">
+    </form>
+  </div>
+</div>

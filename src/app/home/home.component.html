@@ -1,0 +1,48 @@
+<div class="search-bar">
+  <form (ngSubmit)="search()">
+    <div class="options">
+      <label>Departure country</label>
+      <br>
+      <select [(ngModel)]="departureCountry" name="departure">
+        <option  *ngFor="let key of countryKeys()">{{key}}</option>
+      </select>
+    </div>
+    <div class="options">
+      <label>Arrival country</label>
+      <br>
+      <select [(ngModel)]="arrivalCountry" name="arrival">
+        <option  *ngFor="let key of countryKeys()">{{key}}</option>
+      </select>
+    </div>
+    <div class="options">
+      <input type="submit" value="Search" class="submit-button">
+    </div>
+    <div>
+      <div class="second-row">
+        <mat-radio-group [(ngModel)]="oneWay" name="oneWay">
+          <mat-radio-button [value]="true">One way</mat-radio-button>
+          <mat-radio-button [value]="false">Both way</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="second-row" *ngIf="oneWay">
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="date" name="date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="second-row" *ngIf="!oneWay">
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <mat-date-range-input [min]="minDate" [max]="maxDate" [rangePicker]="picker">
+            <input matStartDate placeholder="Start date" [(ngModel)]="startDate" name="startDate">
+            <input matEndDate placeholder="End date"[(ngModel)]="backDate" name="backDate">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+.box{
+  height: 100px;
+  width: 400px;
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  font-family: 'poppins', sans-serif;
+}
+h3{
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
